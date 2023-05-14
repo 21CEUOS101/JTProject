@@ -1,11 +1,14 @@
 package com.project.JTProject.model;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
 
+@JsonInclude(JsonInclude.Include.NON_NULL)
 @Entity 
 public class Locations {
 	

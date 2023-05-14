@@ -18,8 +18,8 @@
 			</script>
 	<div class="container">
       <div class="login-container">
-        <form action="login-after" method="post">
-		  <h1>Login</h1>
+        <form action="login-after" method="post" class="login">
+		  <h1 class="title">Login</h1>
 		  <label for="username">Username:*</label>
 		  <input type="text" placeholder="Enter Username" name="username" id="username" required><br>
 		

@@ -18,7 +18,7 @@
 			</script>
 			
 			
-	<h1>Registration Form</h1>
+	<h1 class="title">Registration Form</h1>
     <form action="register-after" method="post">
 	  <label for="fname">First Name:*</label>
 	  <input type="text" id="fname" name="fname" required pattern="[A-Za-z]{2,}" title="Please enter a valid First Name"><br>

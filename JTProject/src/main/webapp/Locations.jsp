@@ -16,7 +16,6 @@
 	<div>My Location :</div>
 	<div id = "myloc"></div>
 	<div id="locations"></div>
-	
 		
 	<script>
     
@@ -26,6 +25,17 @@
             attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/%22%3EOpenStreetMap</a> contributors',
             maxZoom: 18,
         }).addTo(mymap);
+        
+        var popup = L.popup();
+        
+        function onMapClick(e) {
+        	popup
+            .setLatLng(e.latlng)
+            .setContent("You clicked the map at " + e.latlng.toString())
+            .openOn(mymap);
+        }
+
+        mymap.on('click', onMapClick);
 
         var marker = L.marker([51.5, -0.09]).addTo(mymap);
         
@@ -82,6 +92,7 @@
 				    
 				}
 				table += '</tbody></table>';
+					
 
 
                 
@@ -91,6 +102,8 @@
               .catch(error => {
                 console.error('Error:', error);
               });
+            
+
             
         }
 
@@ -102,12 +115,15 @@
         mymap.on('locationerror', onLocationError);
 
         mymap.locate({setView: true, maxZoom: 16});
+        
+        
+        
     </script>
     
-    <form method="post" action="/addLocation_diff">
-	  <label for="row">Row number:</label>
-	  <input type="text" name="row" id="row"><br><br>
-	  <input type="submit" value="Submit">
+	<form method="post" action="/addLocation_diff">
+		  <label for="row">Row number:</label>
+		  <input type="text" name="row" id="row"><br><br>
+		  <input type="submit" value="Submit">
 	</form>
 	
 	<script>
@@ -171,6 +187,12 @@
 	    hiddenForm.submit();
 	  });
 	</script>
+
+
+    
+</body>
+</html>
+	
 
 
     
